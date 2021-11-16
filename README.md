@@ -16,7 +16,7 @@
 sudo apt-get update
 sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc
 
-7.Check version of current linux kernel use uname -a command.
+7.Check version of current linux kernel, use uname -a command.
 
 8.Clone the Git repository for the latest linux kernel source code: git clone https://github.com/torvalds/linux.git
 
@@ -26,11 +26,9 @@ sudo bash
 apt-get install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev
 cp /boot/config-4.15.0-112-generic ./.config
 
-10.change to the Linux folder and configure the modules to be included/excluded:
+10.change to the Linux folder and configure the modules to be included/excluded: make oldconfig
 
-make oldconfig
-
-11. run these commands : make && make modules && make install && make modules-install
+11.run these commands : make && make modules && make install && make modules-install
 
 12.Again check for the version and make sure it shows latest kernel version use uname -a.
 
@@ -49,8 +47,6 @@ Verify that you are using the newer kernel (5.8, etc) after reboot:
 uname -a
 
 ## Module Development:
-
-Following are the steps to be followed:
 
 Create a new directory named “cmpe283” in cloned linux source folder
 
@@ -75,10 +71,6 @@ Command: sudo insmod ./cmpe283-1.ko
 
 Once loaded the VMX features must be logged in the kernel log and this can be checked by using the command: dmesg
 
-When we unload the module the rmmod, module_exit macro will be invoked, which will in turn call the cleanup_module defined in code.
-
-Command: sudo rmmod ./cmpe283-1.ko
-
 ## Output 
 
 <img width="960" alt="ass1" src="https://user-images.githubusercontent.com/54323888/141872422-f081cc45-d219-48f1-8817-7a6023426ad3.PNG">
@@ -86,3 +78,9 @@ Command: sudo rmmod ./cmpe283-1.ko
 <img width="960" alt="ass1_1" src="https://user-images.githubusercontent.com/54323888/141877693-fd061a8c-0ddd-47f2-a0b9-6ad790db3e3c.PNG">
 
 <img width="960" alt="ass1_2" src="https://user-images.githubusercontent.com/54323888/141877721-2315b87e-ab23-4c13-b59c-e9d2527c4cab.PNG">
+
+### Note:
+
+When we unload the module the rmmod, module_exit macro will be invoked, which will in turn call the cleanup_module defined in code.
+
+Command: sudo rmmod ./cmpe283-1.ko
