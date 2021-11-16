@@ -1,4 +1,4 @@
-# CMPE283 - Virtualalization Technologies
+# CMPE283 - Virtual Technologies
 ## Discovering VMX features
 
 1.Download and Install the VMware Workstation pro free trail.
@@ -78,7 +78,7 @@ Once loaded the VMX features must be logged in the kernel log and this can be ch
 
 <img width="960" alt="ass1_2" src="https://user-images.githubusercontent.com/54323888/141877721-2315b87e-ab23-4c13-b59c-e9d2527c4cab.PNG">
 
-### Note:
+#### Note:
 
 When we unload the module the rmmod, module_exit macro will be invoked, which will in turn call the cleanup_module defined in code.
 
