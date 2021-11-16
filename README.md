@@ -83,3 +83,6 @@ Command: sudo rmmod ./cmpe283-1.ko
 
 <img width="960" alt="ass1" src="https://user-images.githubusercontent.com/54323888/141872422-f081cc45-d219-48f1-8817-7a6023426ad3.PNG">
 
+<img width="960" alt="ass1_1" src="https://user-images.githubusercontent.com/54323888/141877693-fd061a8c-0ddd-47f2-a0b9-6ad790db3e3c.PNG">
+
+<img width="960" alt="ass1_2" src="https://user-images.githubusercontent.com/54323888/141877721-2315b87e-ab23-4c13-b59c-e9d2527c4cab.PNG">
