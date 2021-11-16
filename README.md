@@ -1,7 +1,6 @@
 # CMPE283 - Virtualalization Technologies
 ## Discovering VMX features
 
-### Steps to be followed
 1.Download and Install the VMware Workstation pro free trail.
  
 2.Download the ubuntu 64 bit.
