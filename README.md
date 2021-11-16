@@ -1,9 +1,9 @@
 # CMPE283 - Virtualalization Technologies
 ## Discovering VMX features
 
-### Enviromnemnt Setup
+### Steps to be followed
 1.Download and Install the VMware Workstation pro free trail.
-
+ 
 2.Download the ubuntu 64 bit.
 
 3.Configure the vm with 200gb storage and 4 gb ram preferabbly.
@@ -34,31 +34,29 @@ make oldconfig
 
 12.Again check for the version and make sure it shows latest kernel version use uname -a.
 
-13.To build the kernel, the following sequence of commands can be used (eg, for Ubuntu – other distributions have similar steps but may differ in the installation of the build prerequisites):
+13.To build the kernel, the following sequence of commands can be used 
 
 sudo bash
 apt-get install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev
-
 uname -a (and note down your kernel version, for example “4.15.0-112-generic”)
-
 cp /boot/config-4.15.0-112-generic ./.config (substitute your version obtained from the previous step here though)
 
-make oldconfig (and then just use the default for everything, don’t change anything – you can do this by holding down enter)
+make oldconfig
 
 make && make modules && make install && make modules-install (will take a long time the first time)reboot
 
 Verify that you are using the newer kernel (5.8, etc) after reboot:
 uname -a
 
-Module Development:
+## Module Development:
 
 Following are the steps to be followed:
 
-Create a new directory named “cmpe283” by using mkdir in previously cloned linux source folder: mkdir cmpe283
+Create a new directory named “cmpe283” in cloned linux source folder
 
-Save the files cmpe283-1.c and Makefile in cmpe283 directory, from files section of Canvas provided by the Professor(in our case).
+Save the files cmpe283-1.c and Makefile in cmpe283 directory.
 
-Modify the file cmpe283-1.c to implement the assignment functionality.
+Make the required changes in the the file cmpe283-1.c to implement the assignment functionality.
 
 We create different functionality to query all the 5 different MSRs in the file cmpe283-1.c
 
@@ -72,8 +70,7 @@ cd cmpe283
 
 make
 
-When we insert the module in the kernel, the module_init marco will be invoked, which will in turn call the function init_module defined in code. Use sudo because we can not make changes in user mode.
-
+When we insert the module in the kernel, the module_init marco will be invoked, which will in turn call the function init_module defined in code.
 Command: sudo insmod ./cmpe283-1.ko
 
 Once loaded the VMX features must be logged in the kernel log and this can be checked by using the command: dmesg
@@ -81,3 +78,8 @@ Once loaded the VMX features must be logged in the kernel log and this can be ch
 When we unload the module the rmmod, module_exit macro will be invoked, which will in turn call the cleanup_module defined in code.
 
 Command: sudo rmmod ./cmpe283-1.ko
+
+## Output 
+
+<img width="960" alt="ass1" src="https://user-images.githubusercontent.com/54323888/141872422-f081cc45-d219-48f1-8817-7a6023426ad3.PNG">
+
